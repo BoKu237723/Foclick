@@ -2,20 +2,87 @@
 <html>
 <head>
   <style>
-    body { font-family: sans-serif; width: 200px; padding: 10px; }
-    button { margin-top: 10px; }
+    body {
+      font-family: sans-serif;
+      width: 220px;
+      padding: 15px;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      margin-bottom: 15px;
+    }
+
+    input:focus {
+      border-color: #4a90e2;
+    }
+
+    button {
+      width: 100%;
+      padding: 9px;
+      background: #3578d4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #2865b5;
+    }
+
+    #process_output {
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 0;
+    }
   </style>
 </head>
+
 <body>
   <h3>Focus Search</h3>
-  <label for="target_website">Website to Search:</label>
-  <input type="text" id="target_website" name="target_website" placeholder="eg. youtube.com">
-  <br><br>
-  <label for="target_search">Enter text to Search:</label>
-  <input type="text" id="target_search" name="target_search" placeholder="eg. affordable laptops">
-  <br><br>
+
+  <label for="target_website">Website to Search</label>
+  <input
+    type="text"
+    id="target_website"
+    name="target_website"
+    placeholder="e.g. youtube.com"
+  >
+
+  <label for="target_search">Search Query</label>
+  <input
+    type="text"
+    id="target_search"
+    name="target_search"
+    placeholder="e.g. affordable laptops"
+  >
+
   <button id="search_btn">Search</button>
+
   <p id="process_output"></p>
+
   <script src="popup.js"></script>
 </body>
 </html>
