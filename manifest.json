@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Focus Search",
+  "version": "1.0.0",
+  "description": "Going directly to target website's search rather than forgetting about the task by first post.",
+  "permissions": [
+    "tabs"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "96": "icon96.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "96": "icon96.png"
+  },
+  "browser_specific_settings": {
+    "gecko": { 
+      "id": "focus-search@example.com", 
+      "strict_min_version": "109.0" 
+    }
+  }
+}
