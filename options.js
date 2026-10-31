@@ -1,10 +1,13 @@
 const theme_select = document.getElementById("theme");
+const new_url = document.getElementById("new_website")
+const add_url_btn = document.getElementById("add_website")
 
 // Get URL lists from local (get_url, remove_url)
 browser.runtime.sendMessage({action : "get_urls"}). then ((available_urls) => {
     let website_list = document.getElementById("website_list");
     website_list.innerHTML = ""; // Clear existing list if any
-    
+
+    // Display available urls function
     for (let [website, url] of Object.entries(available_urls)) {
         website_list.innerHTML += `
             <div class="website-item">
@@ -25,6 +28,21 @@ browser.runtime.sendMessage({action : "get_urls"}). then ((available_urls) => {
                 button.parentElement.remove();
             });
         });
+    });
+
+    // Add url function
+    add_url_btn.addEventListener("click", () => {
+        let input = new_url.value
+        let [key, value] = input.split("|");
+        key = key.toLowerCase();
+        browser.runtime.sendMessage({
+            action: "add_url",
+            key,
+            value
+        }).then(()=> {
+            new_url.value = "";
+            window.location.reload();
+        }); 
     });
 });
 

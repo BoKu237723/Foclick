@@ -42,7 +42,17 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
         });
     }
 
-    // 3. Process searched URL
+    // 3. Add new url to local (key / value)
+    if (message.action === "add_url"){
+        return browser.storage.local.get("available_urls").then((data) => {
+            let urls = data.available_urls || available_urls;
+            urls[message.key] = message.value;
+            alert(0);
+            return browser.storage.local.set({ available_urls: urls })
+        });
+    }
+
+    // 4. Process searched URL
     if (message.action === "process_url") {
         return processURL(message.typedWeb, message.typedVal)
     }
