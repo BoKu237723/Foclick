@@ -15,6 +15,15 @@ let available_urls = {
     medium: "https://medium.com/search?q="
 };
 
+// Connect to options.js (get web links & remove web url: future)
+browser.runtime.onMessage.addListener((message) => {
+
+    // Return website list
+    if (message.action === "get_urls") {
+        return Promise.resolve(available_urls)
+    }
+});
+
 browser.runtime.onMessage.addListener(async (message) => {
     if (message.action !== "PROCESS_URL"){
         return;
