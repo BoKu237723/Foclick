@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "Going directly to target website's search rather than forgetting about the task by first post.",
   "permissions": [
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "browser_action": {
     "default_popup": "popup.html",
@@ -16,6 +17,10 @@
     "scripts": [
       "background.js"
     ]
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
   },
   "icons": {
     "96": "icon96.png"

@@ -2,56 +2,98 @@
 <html>
 <head>
   <style>
+    :root {
+      /* Light mode */
+      --bg: #f8f9fa;
+      --text: #333;
+      --input-bg: #fff;
+      --input-border: #ccc;
+      --placeholder: #999;
+      --secondary: #777;
+      --primary: #3578d4;
+      --primary-hover: #2865b5;
+    }
+    
+    body.dark-mode {
+      /* Dark mode */
+      --bg: #1e1e1e;
+      --text: #e4e4e4;
+      --input-bg: #2b2b2b;
+      --input-border: #444;
+      --placeholder: #888;
+      --secondary: #aaa;
+      --primary: #3578d4;
+      --primary-hover: #2865b5;
+    }
+    
     body {
       font-family: sans-serif;
       width: 220px;
       padding: 15px;
-      background: #f8f9fa;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
     }
-
-    h3 {
-      margin-top: 0;
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .header h3 {
       margin-bottom: 18px;
-      text-align: center;
     }
-
+    
+    #settings_btn {
+      width: auto;
+      padding: 3px 6px;
+      background: none;
+      color: var(--secondary);
+      font-size: 16px;
+    }
+    
     label {
       display: block;
       margin-bottom: 6px;
       font-size: 13px;
       font-weight: 600;
     }
-
+    
     input {
       box-sizing: border-box;
       width: 100%;
       padding: 9px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--input-border);
       border-radius: 6px;
       outline: none;
       margin-bottom: 15px;
+      background: var(--input-bg);
+      color: var(--text);
     }
-
+    
+    input::placeholder {
+      color: var(--placeholder);
+    }
+    
     input:focus {
       border-color: #4a90e2;
     }
-
+    
     button {
       width: 100%;
       padding: 9px;
-      background: #3578d4;
+      background: var(--primary);
       color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
     }
-
+    
     button:hover {
-      background: #2865b5;
+      background: var(--primary-hover);
     }
-
+    
     #process_output {
       font-size: 12px;
       text-align: center;
@@ -61,7 +103,12 @@
 </head>
 
 <body>
-  <h3>Focus Search</h3>
+  <div class="header">
+    <h3>Focus Search</h3>
+    <button id="settings_btn" title="Settings">
+      <img id="set_icon" src="settings.svg" width="16" height="16">
+    </button>
+  </div>
 
   <label for="target_website">Website to Search</label>
   <input

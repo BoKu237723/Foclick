@@ -20,6 +20,11 @@ target_search.addEventListener("keydown", (event) => {
     }
 });
 
+// Setting button
+document.getElementById("settings_btn").addEventListener("click", () => {
+    browser.runtime.openOptionsPage();
+})
+
 // Processes to background.js
 document.getElementById('search_btn').addEventListener('click', async () => {
     const url = target_website.value.trim().toLowerCase();
@@ -40,3 +45,21 @@ document.getElementById('search_btn').addEventListener('click', async () => {
         result.textContent = "Error: " + error.message;
     }
 });
+
+// Load saved theme
+browser.storage.local.get("theme").then((data) => {
+    const theme = data.theme || "light";
+    document.body.classList.toggle("dark-mode", theme === "dark");
+    updateIcon(theme);
+});
+
+
+// Settings Icon based on theme
+function updateIcon(theme) {
+    const icon = document.getElementById("set_icon");
+    if (theme === "dark") {
+        icon.src = "settings4b.svg";
+    } else {
+        icon.src = "settings.svg";
+    }
+}
