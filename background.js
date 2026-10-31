@@ -15,56 +15,68 @@ let available_urls = {
     medium: "https://medium.com/search?q="
 };
 
-// Connect to options.js (get web links & remove web url: future)
-browser.runtime.onMessage.addListener((message) => {
-
-    // Return website list
-    if (message.action === "get_urls") {
-        return Promise.resolve(available_urls)
-    }
+browser.runtime.onInstalled.addListener(() => {
+    browser.storage.local.get("available_urls").then((data) => {
+        if (!data.available_urls) {
+            browser.storage.local.set({ available_urls: available_urls });
+        }
+    });
 });
 
-browser.runtime.onMessage.addListener(async (message) => {
-    if (message.action !== "PROCESS_URL"){
-        return;
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+
+    // 1. Return website list
+    if (message.action === "get_urls") {
+        return browser.storage.local.get("available_urls").then((data) => {
+            return data.available_urls || available_urls;
+        });
     }
-    return processURL(message.url, message.searchVal)
+
+    // 2. Remove a website url
+    if (message.action === "remove_url") {
+        return browser.storage.local.get("available_urls").then((data) => {
+            let urls = data.available_urls || available_urls;
+            delete urls[message.url];
+            return browser.storage.local.set({ available_urls: urls });
+        });
+    }
+
+    // 3. Process search URL
+    if (message.action === "PROCESS_URL") {
+        return processURL(message.url, message.searchVal);
+    }
 });
 
 async function processURL(url, searchVal) {
+    // Load current URLs from storage
+    let data = await browser.storage.local.get("available_urls");
+    let current_urls = data.available_urls || available_urls;
 
     if (!searchVal?.trim()) {
-        return{
+        return {
             success: false,
             result: `Enter something to search! searchVal is ${searchVal}.`
         };
-    
-    } else if (!url?.trim()){
+    } else if (!url?.trim()) {
         return { 
             success: false, 
             result: `Enter a website to search on (e.g. youtube.com). Your url is ${url}.`
         };
-
-    } else if (!url in available_urls) {
+    } else if (!(url in current_urls)) {
         return {
             success: false,
             result: `Unsupported URL.`
         };
-
     } else {
-
-        target = available_urls[url]
-
-        let searchUrl = target + encodeURIComponent(searchVal)
+        let target = current_urls[url];
+        let searchUrl = target + encodeURIComponent(searchVal);
         browser.tabs.create({
             url: searchUrl
         });
     
-        return{
+        return {
             success: true,
             result: `Processed: ${url} and ${searchVal}`
-        }
-
+        };
     }
-
 }
