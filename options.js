@@ -1,6 +1,13 @@
 const theme_select = document.getElementById("theme");
 const new_url = document.getElementById("new_website")
 const add_url_btn = document.getElementById("add_website")
+const new_website = document.getElementById("new_website")
+
+new_website.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        add_url_btn.focus();
+    }
+});
 
 // Get URL lists from local (get_url, remove_url)
 browser.runtime.sendMessage({action : "get_urls"}). then ((available_urls) => {
@@ -16,6 +23,42 @@ browser.runtime.sendMessage({action : "get_urls"}). then ((available_urls) => {
             </div>
         `;
     }
+
+    browser.storage.local.get("history").then((data) => {
+        const history_list = document.getElementById("history_list");
+        const history = data.history || [];
+
+        history_list.innerHTML = "";
+
+        // Latest first
+        history.reverse().forEach((item) => {
+            const history_item = document.createElement("div");
+            history_item.className = "history-item";
+    
+            const details = document.createElement("div");
+    
+            const website = document.createElement("strong");
+            website.textContent = item.website;
+    
+            const query = document.createElement("p");
+            query.textContent = item.query;
+    
+            const datetime = document.createElement("small");
+            datetime.textContent = new Date(item.datetime).toLocaleString();
+    
+            details.append(website, query, datetime);
+            history_item.appendChild(details);
+    
+            history_list.appendChild(history_item);
+        });
+    });
+
+    // Clear history function (cuz I know u need ts)
+    document.getElementById("clear_history").addEventListener("click", () => {
+        browser.storage.local.set({ history: [] }).then(() => {
+            window.location.reload();
+        })
+    })
 
     // Remove function
     document.querySelectorAll(".remove-btn").forEach((button) => {

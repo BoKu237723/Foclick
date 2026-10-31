@@ -87,6 +87,9 @@ async function processURL(typedWeb, typedVal) {
 
     let target = current_urls[typedWeb];
     let searchURL = target + encodeURIComponent(typedVal);
+
+    add_history(typedWeb, typedVal);
+
     browser.tabs.create({
         url: searchURL
     });
@@ -95,4 +98,18 @@ async function processURL(typedWeb, typedVal) {
         success: true,
         result: `Processed: ${typedWeb} and ${typedVal}`
     };
+}
+
+function add_history(key, val){
+    browser.storage.local.get("history").then((data) => {
+        let history = data.history || [];
+
+        history.push({
+            website:key,
+            query: val,
+            datetime: new Date().toISOString()
+        });
+
+        browser.storage.local.set({ history })
+    });
 }
