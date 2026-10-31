@@ -1,6 +1,6 @@
 const theme_select = document.getElementById("theme");
 
-// Send website link dictionary --> background.js
+// Get URL lists from local (get_url, remove_url)
 browser.runtime.sendMessage({action : "get_urls"}). then ((available_urls) => {
     let website_list = document.getElementById("website_list");
     website_list.innerHTML = ""; // Clear existing list if any
@@ -31,26 +31,14 @@ browser.runtime.sendMessage({action : "get_urls"}). then ((available_urls) => {
 // Load saved theme
 browser.storage.local.get("theme").then((data) => {
     const theme = data.theme || "light";
-
     theme_select.value = theme;
-    document.body.classList.toggle("dark-mode", theme === "dark");
+    document.body.classList.toggle("dark-mode", theme === "dark")
 });
 
-// Save and apply theme
-theme_select.addEventListener("change", async () => {
+// Save and apply new theme
+theme_select.addEventListener("change", () => {
     const theme = theme_select.value;
+    document.body.classList.toggle("dark-mode", theme === "dark")
 
-    document.body.classList.toggle("dark-mode", theme === "dark");
-
-    await browser.storage.local.set({ theme });
+    browser.storage.local.set({ theme });
 });
-
-document.getElementById("theme").addEventListener("change", async (event) => {
-    let theme = event.target.value;
-
-    await browser.storage.local.set({ theme });
-
-    updateIcon(theme);
-});
-
-loadData();

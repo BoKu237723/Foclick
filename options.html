@@ -2,211 +2,202 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Focus Search - Options</title>
-
-  <style>
-    :root {
-      /* Light theme */
-      --bg: #f8f9fa;
-      --text: #333;
-      --section-bg: #fff;
-      --border: #ddd;
-      --input-bg: #fff;
-      --input-border: #ccc;
-      --item-border: #eee;
-      --description: #777;
-      --link: #3578d4;
-    }
-    
-    body.dark-mode {
-      /* Dark theme */
-      --bg: #1e1e1e;
-      --text: #e4e4e4;
-      --section-bg: #292929;
-      --border: #444;
-      --input-bg: #333;
-      --input-border: #555;
-      --item-border: #444;
-      --description: #aaa;
-      --link: #70aaff;
-    }
-    
-    body {
-      font-family: sans-serif;
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 20px;
-      background: var(--bg);
-      color: var(--text);
-    }
-    
-    h2 {
-      margin-bottom: 25px;
-    }
-    
-    .section {
-      background: var(--section-bg);
-      padding: 15px;
-      margin-bottom: 15px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-    
-    h3 {
-      margin-top: 0;
-      font-size: 16px;
-    }
-    
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-    
-    input, select {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 9px;
-      border: 1px solid var(--input-border);
-      border-radius: 6px;
-      margin-bottom: 10px;
-      background: var(--input-bg);
-      color: var(--text);
-    }
-    
-    input::placeholder {
-      color: var(--description);
-    }
-    
-    button {
-      padding: 8px 12px;
-      background: #3578d4;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    
-    button:hover {
-      background: #2865b5;
-    }
-    
-    .website-item, .history-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--item-border);
-      font-size: 13px;
-    }
-    
-    .remove-btn {
-      background: #dc5555;
-      padding: 5px 9px;
-      font-size: 11px;
-    }
-    
-    .remove-btn:hover {
-      background: #bd3939;
-    }
-    
-    .about-links a {
-      display: block;
-      margin: 10px 0;
-      color: var(--link);
-      text-decoration: none;
-      font-size: 14px;
-    }
-    
-    .about-links a:hover {
-      text-decoration: underline;
-    }
-    
-    #history_list {
-      max-height: 180px;
-      overflow-y: auto;
-    }
-    
-    .description {
-      font-size: 12px;
-      color: var(--description);
-    }
-  </style>
+  <title>Focus Search - Options</title> 
+    <style>
+        :root {
+            /* Light theme */
+            --bg: #f8f9fa;
+            --text: #333;
+            --section-bg: #fff;
+            --border: #ddd;
+            --input-bg: #fff;
+            --input-border: #ccc;
+            --item-border: #eee;
+            --description: #777;
+            --link: #3578d4;
+        }
+        
+        body.dark-mode {
+            /* Dark theme */
+            --bg: #1e1e1e;
+            --text: #e4e4e4;
+            --section-bg: #292929;
+            --border: #444;
+            --input-bg: #333;
+            --input-border: #555;
+            --item-border: #444;
+            --description: #aaa;
+            --link: #70aaff;
+        }
+        
+        body {
+            font-family: sans-serif;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: var(--bg);
+            color: var(--text);
+        }
+        
+        h2 {
+            margin-bottom: 25px;
+        }
+        
+        .section {
+            background: var(--section-bg);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        
+        h3 {
+            margin-top: 0;
+            font-size: 16px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        input, select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 9px;
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            margin-bottom: 10px;
+            background: var(--input-bg);
+            color: var(--text);
+        }
+        
+        input::placeholder {
+            color: var(--description);
+        }
+        
+        button {
+            padding: 8px 12px;
+            background: #3578d4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #2865b5;
+        }
+        
+        .website-item, .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--item-border);
+            font-size: 13px;
+        }
+        
+        .remove-btn {
+            background: #dc5555;
+            padding: 5px 9px;
+            font-size: 11px;
+        }
+        
+        .remove-btn:hover {
+            background: #bd3939;
+        }
+        
+        .about-links a {
+            display: block;
+            margin: 10px 0;
+            color: var(--link);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .about-links a:hover {
+            text-decoration: underline;
+        }
+        
+        #history_list {
+            max-height: 180px;
+            overflow-y: auto;
+        }
+        
+        .description {
+            font-size: 12px;
+            color: var(--description);
+        }
+    </style>
 </head>
 
 <body>
+    <h2>Focus Search - Options</h2>
 
-  <h2>Focus Search - Options</h2>
+    <!-- Default Websites -->
+    <div class="section">
+        <h3>Default Websites</h3>
 
-  <!-- Default Websites -->
-  <div class="section">
-    <h3>Default Websites</h3>
-
-    <div id="website_list">
+        <div id="website_list">
+            <!-- Pull out from local storage -->
+        </div>
+    
+        <label for="new_website" style="margin-top: 16px;">Add Website</label>
+        <input 
+            type="text"
+            id="new_website"
+            placeholder="e.g. YouTube: https://www.youtube.com/results?search_query="
+        >
+    
+        <button id="add_website">Add Website</button>
     </div>
 
-    <label for="new_website" style="margin-top: 16px;">Add Website</label>
-    <input
-      type="text"
-      id="new_website"
-      placeholder="e.g. YouTube: https://www.youtube.com/results?search_query="
-    >
+    <!-- History -->
+    <div class="section">
+        <h3>History</h3>
+        <p class="description">Your previously searched queries.</p>
 
-    <button id="add_website">Add Website</button>
-  </div>
+        <div id="history_list">
+            <!-- Pull out history from local -->
 
+            <div class="history-item">
+                <span>YouTube - Python Toturials</span>
+            </div>
+        </div>
 
-  <!-- History -->
-  <div class="section">
-    <h3>History</h3>
-    <p class="description">Your previously searched queries.</p>
-
-    <div id="history_list">
-      <div class="history-item">
-        <span>YouTube - Python tutorial</span>
-      </div>
-
-      <div class="history-item">
-        <span>Google - CCNA materials</span>
-      </div>
+        <button id="clear_history" class="remove_btn" style="margin-top: 16px;">Clear History</button>
     </div>
 
-    <button id="clear_history" class="remove-btn" style="margin-top: 16px;">
-      Clear History
-    </button>
-  </div>
-
-
-  <!-- Appearance -->
-  <div class="section">
-    <h3>Appearance</h3>
-
-    <label for="theme">Theme</label>
-    <select id="theme">
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-  </div>
-
-
-  <!-- About -->
-  <div class="section">
-    <h3>About</h3>
-
-    <p class="description">
-      Focus Search helps you search for something straight up without
-      getting distracted by unrelated content.
-    </p>
-
-    <div class="about-links">
-      <a href="github.com/BoKu237723/Focus-Search" id="source_link">Source Code (GitHub)</a>
-      <a href="boku-profile.netlify.app" id="dev_link">Developer Profile</a>
+    <!-- Appearance -->
+    <div class="section">
+        <h3>Appearance</h3>
+        <label for="theme">Theme</label>
+        <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
     </div>
 
-    <p class="description">Focus Search v1.0.0</p>
-  </div>
-  <script src="options.js"></script>
+    <!-- About -->
+    <div class="section">
+        <h3>About</h3>
+
+        <p class="description">Focus Search helps you search for something straight up without getting distracted by unrelated content.</p>
+        <p class="description">This project is an Open Source Project</p>
+
+        <div class="about-links">
+            <a href="github.com/BoKu237723/Focus-Search">Source Code (Github)</a>
+            <a href="boku-profile.netlify.app">Developer Profile</a>
+        </div>
+        
+        <p class="description">Focus Search v1.0.0</p>
+    </div>
+
+    <script src="options.js"></script>
 </body>
+
 </html>
