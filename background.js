@@ -5,6 +5,7 @@ let available_urls = {
     linkedin: "https://www.linkedin.com/search/results/all/?keywords=",
     instagram: "https://www.instagram.com/explore/search/keyword/?q=",
     x: "https://x.com/search?q=",
+    twitter: "https://x.com/search?q=",
     threads: "https://www.threads.net/search?q=",
     reddit: "https://www.reddit.com/search/?q=",
     pinterest: "https://www.pinterest.com/search/pins/?q=",
