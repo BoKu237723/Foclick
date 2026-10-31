@@ -3,7 +3,7 @@ const target_search = document.getElementById("target_search")
 const result = document.getElementById("process_output")
 
 document.getElementById('search_btn').addEventListener('click', async () => {
-    const url = target_website.value.trim();
+    const url = target_website.value.trim().toLowerCase();
     const searchVal = target_search.value.trim();
     try {
         const response = await browser.runtime.sendMessage({
