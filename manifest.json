@@ -25,5 +25,13 @@
       "id": "focus-search@example.com", 
       "strict_min_version": "109.0" 
     }
+  },
+  "commands": {
+      "_execute_browser_action": {
+          "suggested_key": {
+              "default": "Ctrl+F1"
+          },
+          "description": "Open Focus Search"
+      }
   }
 }
