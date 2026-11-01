@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Focus Search",
+    "name": "Foclick",
     "version": "2.0.0",
     "description": "Going directly to target website's search to prevent forgetting main task by first post",
     "permissions": [
@@ -30,7 +30,7 @@
             "suggested_key": {
                 "default": "Ctrl+F1"
             },
-            "description": "Open Focus Search"
+            "description": "Open Foclick"
         }
     }
 }
