@@ -1,3 +1,5 @@
+const browserAPI = globalThis.browser || globalThis.chrome;
+
 let available_urls = {
     youtube: "https://www.youtube.com/results?search_query=",
     facebook: "https://www.facebook.com/search/top?q=",
@@ -15,40 +17,39 @@ let available_urls = {
 };
 
 // Put the default links to local on install
-browser.runtime.onInstalled.addListener(() => {
-    browser.storage.local.get("available_urls").then((data) => {
+browserAPI.runtime.onInstalled.addListener(() => {
+    browserAPI.storage.local.get("available_urls").then((data) => {
         if(!data.available_urls) {
-            browser.storage.local.set({ available_urls : available_urls});
+            browserAPI.storage.local.set({ available_urls : available_urls});
         }
     });
 });
 
 // CRUD Functionalities
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+browserAPI.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     // 1. Return website list from local
     if (message.action === "get_urls") {
-        return browser.storage.local.get("available_urls").then((data) => {
+        return browserAPI.storage.local.get("available_urls").then((data) => {
             return data.available_urls || available_urls
         });
     }
 
     // 2. Remove a website url from local
     if (message.action === "remove_url") {
-        return browser.storage.local.get("available_urls").then((data) => {
+        return browserAPI.storage.local.get("available_urls").then((data) => {
             let urls = data.available_urls || available_urls;
             delete urls[message.url];
-            return browser.storage.local.set({ available_urls : urls})
+            return browserAPI.storage.local.set({ available_urls : urls})
         });
     }
 
     // 3. Add new url to local (key / value)
     if (message.action === "add_url"){
-        return browser.storage.local.get("available_urls").then((data) => {
+        return browserAPI.storage.local.get("available_urls").then((data) => {
             let urls = data.available_urls || available_urls;
             urls[message.key] = message.value;
-            alert(0);
-            return browser.storage.local.set({ available_urls: urls })
+            return browserAPI.storage.local.set({ available_urls: urls })
         });
     }
 
@@ -61,7 +62,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // Processing the URL (Main Objective)
 async function processURL(typedWeb, typedVal) {
     // Load current URLs from storage
-    let data = await browser.storage.local.get("available_urls");
+    let data = await browserAPI.storage.local.get("available_urls");
     let current_urls = data.available_urls || available_urls;
 
     if (!typedVal?.trim()) {
@@ -78,7 +79,7 @@ async function processURL(typedWeb, typedVal) {
         };
     }
 
-    if (!Object.hasOwn(data.available_urls, typedWeb)){
+    if (!Object.hasOwn(current_urls, typedWeb)){
         return { 
             success: false,
             result: "Unsupported URL!"
@@ -90,7 +91,7 @@ async function processURL(typedWeb, typedVal) {
 
     add_history(typedWeb, typedVal);
 
-    browser.tabs.create({
+    browserAPI.tabs.create({
         url: searchURL
     });
 
@@ -101,7 +102,7 @@ async function processURL(typedWeb, typedVal) {
 }
 
 function add_history(key, val){
-    browser.storage.local.get("history").then((data) => {
+    browserAPI.storage.local.get("history").then((data) => {
         let history = data.history || [];
 
         history.push({
@@ -110,6 +111,11 @@ function add_history(key, val){
             datetime: new Date().toISOString()
         });
 
-        browser.storage.local.set({ history })
+        browserAPI.storage.local.set({history}).then(() => {
+            console.log("History saved.");
+        })
+        .catch((error) => {
+            console.error("Storage error: ", error)
+        })
     });
 }

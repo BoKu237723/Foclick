@@ -1,34 +1,30 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Focus Search",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Going directly to target website's search to prevent forgetting main task by first post",
     "permissions": [
         "tabs",
         "storage"
     ],
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_icon": {
             "96": "icon96.png"
         }
     },
     "background": {
-        "scripts": [
-            "background.js"
-        ]
+        "service_worker": "background.js"
     },
-    "options_ui": {
-        "page": "options.html",
-        "open_in_tab": true
-    },
+    "options_page": "options.html",
+
     "icons": {
         "96": "icon96.png"
     },
     "commands": {
-        "_execute_browser_action": {
+        "_execute_action": {
             "suggested_key": {
-                "default": "Ctrl+F1"
+                "default": "Alt+Shift+F"
             },
             "description": "Open Focus Search"
         }
