@@ -4,7 +4,6 @@
     "version": "2.0.0",
     "description": "Going directly to target website's search to prevent forgetting main task by first post",
     "permissions": [
-        "tabs",
         "storage"
     ],
     "action": {
