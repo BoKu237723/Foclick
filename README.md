@@ -51,7 +51,7 @@ Ever opened YouTube just to search for a tutorial, only to end up scrolling thro
 - **Simple Interface & Theme Support** — Jump straight to your target website's search results. Supports `Light Mode` and `Dark Mode`.
 - **Custom Websites** — `Add`, `view`, and `remove` your preferred search destinations.
 - **Search History** — View previous searches, including the target website and search query. Also have option to remove search history `cuz I know u need this :>`
-- **Locally Stored Data** — `Configurations and search history are stored locally in the browser.`
+- **Locally Stored Data** — Configurations and search history are stored locally in the browser.
 - **Open Source** — Foclick is an open-source project, and contributions, suggestions, bug reports, and feedback are always welcome!
 
 <details open>
