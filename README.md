@@ -45,8 +45,8 @@ Ever opened YouTube just to search for a tutorial, only to end up scrolling thro
 
 - **Quick Access** — Open Foclick using a keyboard shortcut.
 - **Cross-Browser Support** —  Available for Firefox and Chrome.
-  - **Firefox**: `Ctrl + \``
-  - **Chrome**: `Alt + Shift + F`
+  - **Firefox**: `Ctrl + F1``
+  - **Chrome**: `Ctrl + Shift + F`
 - **Simple Interface & Theme Support** — Jump straight to your target website's search results. Supports `Light Mode` and `Dark Mode`.
 - **Custom Websites** — `Add`, `view`, and `remove` your preferred search destinations.
 - **Search History** — View previous searches, including the target website and search query. Also have option to remove search history `cuz I know u need this :>`
