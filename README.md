@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <i align="center">Developed by BoKu</i>
+    <i align="center">Developed by BoKu (•ᴗ•)</i>
 </p>
 
 <h4 align="center">
@@ -73,9 +73,9 @@ Ever opened YouTube just to search for a tutorial, only to end up scrolling thro
 </details>
 
 ## User Feedback and Research
-Help improve Focus Search by participating in a short, 1-minute [Survey](https://forms.gle/zfB4M7t4TSwugG6j8)! No personal info is taken. 
+Help improve Focus Search by participating in a short, 1-minute [Survey](https://forms.gle/tnh9xmQKipnwPh6N6)! No personal info is taken. („• ֊ •„)
 
-Every response is appreciated. Thank you for contributing!
+Every single response is appreciated. Thank you for contributing!
 
 ## Contributors
 [//]: contributor-faces
