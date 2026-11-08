@@ -3,11 +3,11 @@
 </h1>
 
 <p align="center">
-  <i align="center">You came to search for something. Why are you scrolling?</i>
+  <i align="center">You came to search for something. Why are you scrolling (ㆆ_ㆆ)?</i>
 </p>
 
 <p align="center">
-    <i align="center">Developed by BoKu</i>
+    <i align="center">Developed by BoKu (•⩊•)</i>
 </p>
 
 <h4 align="center">
@@ -72,9 +72,9 @@ Ever opened YouTube just to search for a tutorial, only to end up scrolling thro
 </details>
 
 ## User Feedback and Research
-Help improve Focus Search by participating in a short, 1-minute [Survey](https://forms.gle/zfB4M7t4TSwugG6j8)! No personal info is taken. 
+Help improve Focus Search by participating in a short, 1-minute [Survey](https://forms.gle/fdF6wqjGN21jeUzd9)! No personal info is taken. 
 
-Every response is appreciated. Thank you for contributing!
+Every response is appreciated. Thank you for contributing!  ദ്ദി◝ ⩊ ◜.
 
 ## Contributors
 [//]: contributor-faces
