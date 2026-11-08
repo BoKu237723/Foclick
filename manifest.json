@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Foclick",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Going directly to target website's search to prevent forgetting main task by first post",
     "permissions": [
         "storage"
