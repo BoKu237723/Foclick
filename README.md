@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <i align="center">Developed by BoKu (•⩊•)</i>
+    <i align="center">Developed by BoKu</i>
 </p>
 
 <h4 align="center">
