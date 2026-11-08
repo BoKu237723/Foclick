@@ -3,11 +3,11 @@
 </h1>
 
 <p align="center">
-  <i align="center">You came to search for something. Why are you scrolling?</i>
+  <i align="center">You came to search for something. Why are you scrolling (ㆆ_ㆆ)?</i>
 </p>
 
 <p align="center">
-    <i align="center">Developed by BoKu (•ᴗ•)</i>
+    <i align="center">Developed by BoKu (•⩊•)</i>
 </p>
 
 <h4 align="center">
@@ -32,7 +32,6 @@
   <img src="https://raw.githubusercontent.com/BoKu237723/Repo-Images/main/foclick/cover.png" width="100%" alt="Letto">
 </p>
 
-
 ## Introduction
 
 Ever opened YouTube just to search for a tutorial, only to end up scrolling through recommendations and forgetting what you originally came for?
@@ -51,7 +50,7 @@ Ever opened YouTube just to search for a tutorial, only to end up scrolling thro
 - **Simple Interface & Theme Support** — Jump straight to your target website's search results. Supports `Light Mode` and `Dark Mode`.
 - **Custom Websites** — `Add`, `view`, and `remove` your preferred search destinations.
 - **Search History** — View previous searches, including the target website and search query. Also have option to remove search history `cuz I know u need this :>`
-- **Locally Stored Data** — Configurations and search history are stored locally in the browser.
+- **Locally Stored Data** — `Configurations and search history are stored locally in the browser.`
 - **Open Source** — Foclick is an open-source project, and contributions, suggestions, bug reports, and feedback are always welcome!
 
 <details open>
@@ -73,9 +72,9 @@ Ever opened YouTube just to search for a tutorial, only to end up scrolling thro
 </details>
 
 ## User Feedback and Research
-Help improve Focus Search by participating in a short, 1-minute [Survey](https://forms.gle/tnh9xmQKipnwPh6N6)! No personal info is taken. („• ֊ •„)
+Help improve Focus Search by participating in a short, 1-minute [Survey](https://forms.gle/fdF6wqjGN21jeUzd9)! No personal info is taken. 
 
-Every single response is appreciated. Thank you for contributing!
+Every response is appreciated. Thank you for contributing!  ദ്ദി◝ ⩊ ◜.
 
 ## Contributors
 [//]: contributor-faces
